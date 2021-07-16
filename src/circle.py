@@ -24,6 +24,7 @@ class Circle(Figure):
         self.area = self.get_area()
         self.perimeter = self.get_perimeter()
 
+
     # Вычисляем площадь круга
     def get_area(self):
         return self.pi * (self.x * self.x)
@@ -32,8 +33,8 @@ class Circle(Figure):
     def get_perimeter(self):
         return self.pi * self.x * 2
 
-    # К площади прямоугольника добавляем площадь другой фигуры
+    # К площади круга добавляем площадь другой фигуры
     def add_area(self, other_figure):
-        if not isinstance(self, other_figure):
+        if not isinstance(other_figure, Figure):
             raise ValueError('Object is not class of Figure')
         return self.area + other_figure.area
