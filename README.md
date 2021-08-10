@@ -175,4 +175,55 @@ test_service3.py - "https://jsonplaceholder.typicode.com/"
    4. проверяет наличие 'name' в ответе
    5. проверяет наличие 'postId' в ответе
    6. проверяет количество получаемых в ответе элементов = 5 (пять)
+
+
+
+**Homework # 4**
+
+_Package "homework4"_
+
+Заголовок: "Настройка окружения Selenium, явные ожидания элементов, UI тесты на проверку наличия элемента на странице."
+
+1. Все селекторы для поиска элементов расположены в репозитории page_objects/selectors.py
    
+   class class mainPageSelectors описывает селекторы элементов главной страницы сайта https://demo.opencart.com   
+   class catalogPageSelectors описывает селекторы элементов главной страницы сайта https://demo.opencart.com/index.php?route=product/category&path=18
+   class productPageSelectors описывает селекторы элементов главной страницы сайта https://demo.opencart.com/index.php?route=product/product&path=18&product_id=44   
+   class authAdminPageSelectors описывает селекторы элементов главной страницы сайта https://demo.opencart.com/admin/ 
+   
+2. Все исполняемые тесты расположены в репозитории tests
+   
+   test_main_page.py - тесты элементов главной страницы
+   
+   'test_slider_visibility(browser, url_base)' - тестовая функция, проверяющая видимость элемента "слайдер" на главной странице
+   'test_cart_visibility(browser, url_base)' - тестовая функция, проверяющая видимость элемента "корзина" на главной странице
+   'test_search_visibility(browser, url_base)' - тестовая функция, проверяющая видимость элемента "поиск" на главной странице
+   'test_logo_swiper_visibility(browser, url_base)' - тестовая функция, проверяющая видимость элемента "карусель логотипов" на главной странице
+   'test_products_visibility(browser, url_base)' - тестовая функция, проверяющая видимость 4х продуктовых карточек на главной странице
+   
+   test_catalog_page.py - тесты элементов страницы каталога
+
+   'test_aside_menu_visibility(browser, url_cat)' - тестовая функция, проверяющая видимость элемента "боковое меню" на странице каталога
+   'test_banner_visibility(browser, url_cat)' - тестовая функция, проверяющая видимость элемента "баннер" на странице каталога
+   'test_list_btn_visibility(browser, url_cat)' - тестовая функция, проверяющая видимость элемента "кнопка вывода - list" на странице каталога
+   'test_grid_btn_visibility(browser, url_cat)' - тестовая функция, проверяющая видимость элемента "кнопка вывода - grid" на странице каталога
+   'test_products_visibility(browser, url_cat)' - тестовая функция, проверяющая видимость 5 продуктовых карточек на странице каталога с товарами
+   
+   test_product_page.py - тесты элементов страницы продукта
+
+   'test_thumbnail_visibility(browser, url_prod)' - тестовая функция, проверяющая видимость элемента "все изображения товара в одном блоке" на странице товара 
+   'test_thumbnails_qty_visibility(browser, url_prod)' - тестовая функция, проверяющая видимость 4х элементов "изображения товара" на странице товара 
+   'test_product_title_visibility(browser, url_prod)' - тестовая функция, проверяющая видимость элемента "название товара" на странице товара
+   'test_quantity_input_visibility(browser, url_prod)' - тестовая функция, проверяющая видимость элемента "поле для ввода количества товаров" на странице товара
+   'test_cart_btn_visibility(browser, url_prod)' - тестовая функция, проверяющая видимость элемента "кнопка положить в корзину" на странице товара
+   
+   test_auth_admin_page.py - тесты элементов страницы входа в админку
+
+   'test_form_title_visibility(browser, url_auth)' - тестовая функция, проверяющая видимость элемента "заголовок формы аутентификации" на странице входа в админку 
+   'test_login_input_visibility(browser, url_auth)' - тестовая функция, проверяющая видимость элемента "поле ввода логина" на странице входа в админку
+   'test_password_input_visibility(browser, url_auth)' - тестовая функция, проверяющая видимость элемента "поле ввода пароля" на странице входа в админку
+   'test_forgot_password_visibility(browser, url_auth)' - тестовая функция, проверяющая видимость элемента "ссылка Забыли пароль" на странице входа в админку
+   'test_login_btn_visibility(browser, url_auth)' - тестовая функция, проверяющая видимость элемента "кнопка Войти" на странице входа в админку
+   
+   
+
