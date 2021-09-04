@@ -8,13 +8,13 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.AuthPage import AuthPage
 from homework5.page_objects.AdminCatalogProductsPage import AdminCatalogProductsPage
 from homework5.page_objects.TestData import AdminCatalogProductsPageTestData
-import time
 
 
-# Тест на проверку удаления случайного товара из каталога
+@allure.title("Тест на проверку удаления случайного товара из каталога")
 def test_delete_random_product(browser, local_admin_url):
     admin_page = AdminCatalogProductsPage(browser, local_admin_url)
     auth_page = AuthPage(browser, local_admin_url)
@@ -25,10 +25,11 @@ def test_delete_random_product(browser, local_admin_url):
     admin_page.mark_random_product()
     admin_page.push_delete_btn()
     admin_page.alert_accept()
-    assert admin_page.get_quantity(AdminCatalogProductsPage.PRODUCT_ROW) == total_products_qty - 1, "Needs products quantity to be equal to 18"
+    assert admin_page.get_quantity(
+        AdminCatalogProductsPage.PRODUCT_ROW) == total_products_qty - 1, "Needs products quantity to be equal to 18"
 
 
-# Тест на проверку удаления всех товаров из каталога
+@allure.title("Тест на проверку удаления всех товаров из каталога")
 def test_delete_all_products(browser, local_admin_url):
     admin_page = AdminCatalogProductsPage(browser, local_admin_url)
     auth_page = AuthPage(browser, local_admin_url)
@@ -43,7 +44,7 @@ def test_delete_all_products(browser, local_admin_url):
         'outerText'), "Needs quantity of products to be equal to 'No results!"
 
 
-# Тест на проверку добавления в каталог нового товара
+@allure.title("Тест на проверку добавления в каталог нового товара")
 def test_add_product(browser, local_admin_url):
     admin_page = AdminCatalogProductsPage(browser, local_admin_url)
     auth_page = AuthPage(browser, local_admin_url)

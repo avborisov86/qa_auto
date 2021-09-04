@@ -10,12 +10,13 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.BasePage import BasePage
 from homework5.page_objects.TestData import CatalogPageTestData
 from homework5.page_objects.CatalogPage import CatalogPageLocators
 
 
-# Тест на проверку видимости элемента "боковое меню" на странице каталога
+@allure.title("Тест на проверку видимости элемента \"боковое меню\" на странице каталога")
 def test_aside_menu_visibility(browser, cat_url):
     catalog_page = BasePage(browser, cat_url)
     catalog_page.go_to_site()
@@ -24,7 +25,7 @@ def test_aside_menu_visibility(browser, cat_url):
                                                                           'id'), "Needs aside menu id should be equal to 'column-left'!"
 
 
-# Тест на проверку видимости элемента "баннер" на странице каталога
+@allure.title("Тест на проверку видимости элемента \"баннер\" на странице каталога")
 def test_banner_visibility(browser, cat_url):
     catalog_page = BasePage(browser, cat_url)
     catalog_page.go_to_site()
@@ -33,7 +34,7 @@ def test_banner_visibility(browser, cat_url):
                                                                       'id'), "Needs banner id should be equal to 'banner0'!"
 
 
-# Тест на проверку видимости элемента "кнопка вывода - list" на странице каталога
+@allure.title("Тест на проверку видимости элемента \"кнопка вывода - list\" на странице каталога")
 def test_list_btn_visibility(browser, cat_url):
     catalog_page = BasePage(browser, cat_url)
     catalog_page.go_to_site()
@@ -42,7 +43,7 @@ def test_list_btn_visibility(browser, cat_url):
                                                                              'id'), "Needs list view button id should be equal to 'list-view'!"
 
 
-# Тест на проверку видимости элемента "кнопка вывода - grid" на странице каталога
+@allure.title("Тест на проверку видимости элемента \"кнопка вывода - grid\" на странице каталога")
 def test_grid_btn_visibility(browser, cat_url):
     catalog_page = BasePage(browser, cat_url)
     catalog_page.go_to_site()
@@ -51,7 +52,7 @@ def test_grid_btn_visibility(browser, cat_url):
                                                                              'id'), "Needs list view button id should be equal to 'grid-view'!"
 
 
-# Тест на проверку видимости 5 продуктовых карточек на странице каталога с товарами
+@allure.title("Тест на проверку видимости 5 продуктовых карточек на странице каталога с товарами")
 def test_products_visibility(browser, cat_url):
     catalog_page = BasePage(browser, cat_url)
     catalog_page.go_to_site()

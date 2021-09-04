@@ -11,12 +11,13 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.BasePage import BasePage
 from homework5.page_objects.TestData import ProductPageTestData
 from homework5.page_objects.ProductPage import ProductPageLocators
 
 
-# Тест на проверку видимости элемента "Все изображения товара в одном блоке" на странице товара
+@allure.title("Тест на проверку видимости элемента \"Все изображения товара в одном блоке\" на странице товара")
 def test_thumbnails_block_visibility(browser, prod_url):
     product_page = BasePage(browser, prod_url)
     product_page.go_to_site()
@@ -25,7 +26,7 @@ def test_thumbnails_block_visibility(browser, prod_url):
                                                                               'className'), "Needs main thumbnails className to be equal to 'thumbnails'!"
 
 
-# Тест на проверку видимости 4х элементов "изображения товара" на странице товара
+@allure.title("Тест на проверку видимости 4х элементов \"изображения товара\" на странице товара")
 def test_thumbnails_visibility(browser, prod_url):
     product_page = BasePage(browser, prod_url)
     product_page.go_to_site()
@@ -33,7 +34,7 @@ def test_thumbnails_visibility(browser, prod_url):
         ProductPageLocators.THUMBS_QTY), "Quantity of elements should be equal to 4!"
 
 
-# Тест на проверку видимости элемента "название товара" на странице товара
+@allure.title("Тест на проверку видимости элемента \"название товара\" на странице товара")
 def test_product_title_visibility(browser, prod_url):
     product_page = BasePage(browser, prod_url)
     product_page.go_to_site()
@@ -42,7 +43,7 @@ def test_product_title_visibility(browser, prod_url):
                                                                              'textContent'), "Needs h1 header should be equal to 'MacBook Air'!"
 
 
-# Тест на проверку видимости элемента "поле для ввода количества товаров" на странице товара
+@allure.title("Тест на проверку видимости элемента \"поле для ввода количества товаров\" на странице товара")
 def test_input_of_quantity_visibility(browser, prod_url):
     product_page = BasePage(browser, prod_url)
     product_page.go_to_site()
@@ -51,7 +52,7 @@ def test_input_of_quantity_visibility(browser, prod_url):
                                                                            'name'), "Needs name value should be equal to 'quantity'!"
 
 
-# Тест на проверку видимости элемента кнопки "положить в корзину" на странице товара
+@allure.title("Тест на проверку видимости элемента кнопки \"положить в корзину\" на странице товара")
 def test_cart_btn_visibility(browser, prod_url):
     product_page = BasePage(browser, prod_url)
     product_page.go_to_site()
