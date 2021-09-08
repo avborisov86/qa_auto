@@ -10,11 +10,12 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.AuthPage import AuthPage
 from homework5.page_objects.TestData import AuthPageTestData
 
 
-# Тест на проверку видимости элемента "заголовок формы аутентификации" на странице входа в админку
+@allure.title("Тест на проверку видимости элемента \"заголовок формы аутентификации\" на странице входа в админку")
 def test_form_title_visibility(browser, auth_url):
     auth_page = AuthPage(browser, auth_url)
     auth_page.go_to_site()
@@ -23,7 +24,7 @@ def test_form_title_visibility(browser, auth_url):
                                                                             'innerText'), "Needs title text should be equal to ' Please enter your login details.'!"
 
 
-# Тест на проверку видимости элемента "поле ввода логина" на странице входа в админку
+@allure.title("Тест на проверку видимости элемента \"поле ввода логина\" на странице входа в админку")
 def test_login_input_visibility(browser, auth_url):
     auth_page = AuthPage(browser, auth_url)
     auth_page.go_to_site()
@@ -32,7 +33,7 @@ def test_login_input_visibility(browser, auth_url):
                                                                      'id'), "Needs login input id should be equal to 'input-username'!"
 
 
-# Тест на проверку видимости элемента "поле ввода пароля" на странице входа в админку
+@allure.title("Тест на проверку видимости элемента \"поле ввода пароля\" на странице входа в админку")
 def test_password_input_visibility(browser, auth_url):
     auth_page = AuthPage(browser, auth_url)
     auth_page.go_to_site()
@@ -41,7 +42,7 @@ def test_password_input_visibility(browser, auth_url):
                                                                     'id'), "Needs password input id should be equal to 'input-password'!"
 
 
-# Тест на проверку видимости элемента "ссылка Забыли пароль" на странице входа в админку
+@allure.title("Тест на проверку видимости элемента \"ссылка Забыли пароль\" на странице входа в админку")
 def test_forgot_password_visibility(browser, auth_url):
     auth_page = AuthPage(browser, auth_url)
     auth_page.go_to_site()
@@ -50,7 +51,7 @@ def test_forgot_password_visibility(browser, auth_url):
                                                                        'innerText'), "Needs forgot password text should be equal to 'Forgotten Password'!"
 
 
-# Тест на проверку видимости элемента "кнопка Войти" на странице входа в админку
+@allure.title("Тест на проверку видимости элемента \"кнопка Войти\" на странице входа в админку")
 def test_login_btn_visibility(browser, auth_url):
     auth_page = AuthPage(browser, auth_url)
     auth_page.go_to_site()

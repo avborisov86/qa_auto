@@ -6,11 +6,12 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.UserRegisterPage import UserRegisterPage
 from homework5.page_objects.TestData import UserRegisterPageTestData
 
 
-# Тест на проверку успешности регистрации нового пользователя
+@allure.title("Тест на проверку успешности регистрации нового пользователя")
 def test_user_registration(browser, local_register_url):
     user_reg_page = UserRegisterPage(browser, local_register_url)
     user_reg_page.go_to_site()

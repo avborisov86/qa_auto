@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 from homework5.page_objects.BasePage import BasePage
 
@@ -15,6 +16,7 @@ class Header(BasePage):
     # Знак отображения разных валют
     CURRENCY_SIGN = (By.CSS_SELECTOR, '#form-currency > div > button > strong')
 
+    @allure.step("Changing currency to chosen value")
     def change_currency_to(self, value: str):
         self.find_element(self.CURRENCY_BTN, 2).click()
         if value == "EUR":

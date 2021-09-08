@@ -13,6 +13,7 @@ Tests:
 Author: Anton Borisov
 """
 
+import allure
 from homework5.page_objects.BasePage import BasePage
 from homework5.page_objects.elements.Header import Header
 from homework5.page_objects.MainPage import MainPageLocators
@@ -20,7 +21,7 @@ from homework5.page_objects.TestData import MainPageTestData
 from homework5.page_objects.TestData import HeaderTestData
 
 
-# Тест на проверку видимости элемента "слайдер" на главной странице
+@allure.title("Тест на проверку видимости элемента \"слайдер\" на главной странице")
 def test_slider_visibility(browser, base_url):
     main_page = BasePage(browser, base_url)
     main_page.go_to_site()
@@ -29,7 +30,7 @@ def test_slider_visibility(browser, base_url):
                                                                      'id'), "Element id should be equal to 'slideshow0'!"
 
 
-# Тест на проверку видимости элемента "корзина" на главной странице
+@allure.title("Тест на проверку видимости элемента \"корзина\" на главной странице")
 def test_cart_visibility(browser, base_url):
     main_page = BasePage(browser, base_url)
     main_page.go_to_site()
@@ -37,7 +38,7 @@ def test_cart_visibility(browser, base_url):
     assert MainPageTestData.CART_ID == main_page.get_property(element, 'id'), "Element id should be equal to 'cart'!"
 
 
-# Тест на проверку видимости элемента "поиск" на главной странице
+@allure.title("Тест на проверку видимости элемента \"поиск\" на главной странице")
 def test_search_visibility(browser, base_url):
     main_page = BasePage(browser, base_url)
     main_page.go_to_site()
@@ -46,7 +47,7 @@ def test_search_visibility(browser, base_url):
                                                                 'id'), "Element id should be equal to 'search'!"
 
 
-# Тест на проверку видимости элемента "карусель логотипов" на главной странице
+@allure.title("Тест на проверку видимости элемента \"карусель логотипов\" на главной странице")
 def test_logo_carousel_visibility(browser, base_url):
     main_page = BasePage(browser, base_url)
     main_page.go_to_site()
@@ -55,7 +56,7 @@ def test_logo_carousel_visibility(browser, base_url):
                                                                        'id'), "Element id should be equal to 'carousel0'!"
 
 
-# Тест на проверку видимости 4 продуктовых карточек на главной странице
+@allure.title("Тест на проверку видимости 4 продуктовых карточек на главной странице")
 def test_products_visibility(browser, base_url):
     main_page = BasePage(browser, base_url)
     main_page.go_to_site()
@@ -63,7 +64,7 @@ def test_products_visibility(browser, base_url):
         MainPageLocators.PRODUCTS), "Quantity of elements should be equal to 4!"
 
 
-# Тест на проверку переключения валюты на Евро
+@allure.title("Тест на проверку переключения валюты на Евро")
 def test_change_currency_to_eur(browser, base_url):
     main_page = Header(browser, base_url)
     main_page.go_to_site()
@@ -73,7 +74,7 @@ def test_change_currency_to_eur(browser, base_url):
                                                                     'innerHTML'), "Currency sign should be equal to '€'!"
 
 
-# Тест на проверку переключения валюты на Фунты
+@allure.title("Тест на проверку переключения валюты на Фунты")
 def test_change_currency_to_gbp(browser, base_url):
     main_page = Header(browser, base_url)
     main_page.go_to_site()
@@ -83,7 +84,7 @@ def test_change_currency_to_gbp(browser, base_url):
                                                                    'innerHTML'), "Currency sign should be equal to '£'!"
 
 
-# Тест на проверку переключения валюты на Доллары
+@allure.title("Тест на проверку переключения валюты на Доллары")
 def test_change_currency_to_usd(browser, base_url):
     main_page = Header(browser, base_url)
     main_page.go_to_site()
@@ -93,7 +94,7 @@ def test_change_currency_to_usd(browser, base_url):
                                                                    'innerHTML'), "Currency sign should be equal to '$'!"
 
 
-# Тест на проверку переключения валюты на Фунты с пользовательским движением мышкой
+@allure.title("Тест на проверку переключения валюты на Фунты с пользовательским движением мышкой")
 def test_user_change_currency(browser, base_url):
     main_page = Header(browser, base_url)
     main_page.go_to_site()
