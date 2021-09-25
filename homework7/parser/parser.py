@@ -173,19 +173,20 @@ def get_frequent_requests(path_to_filename: str):
 
 # Считаем запросы и выбираем топ 3 наиболее длительных
 def count_requests_speed(path_to_filename: str):
-    time_regex = r'\" .\d{3,6}'
+    time_regex = r'\" .\d{3,4}'
     data = re.findall(time_regex, reader(path_to_filename))
-    counter = Counter(data)
-    slowest_requests_list = sorted(counter)
-    slowest_request_time = slowest_requests_list[-1]
+    i = 0
+    time_list = []
+    for elem in data:
+        time_list.append(int(re.sub("[^0-9]", "", elem)))
+        i += 1
+    time_list.sort()
+    slowest_request_time = time_list[-1].__str__()
     file_data = open(path_to_filename).readlines()
-    count = 0
     requests_list = []
     for elem in iter(file_data):
         if slowest_request_time in elem:
             requests_list.append(elem)
-        count += 1
-
     json_data = {
         "Топ 3х наиболее длительных запросов из файла " + path_to_filename: {
             "1 место": requests_list[0],
