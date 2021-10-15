@@ -1,5 +1,4 @@
 import subprocess
-import re
 from datetime import datetime
 
 
@@ -8,51 +7,42 @@ def get_ps_aux_data():
     process = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE, encoding="utf-8").communicate()[0]
     result = process.split('\n')
     nfields = len(result[0].split()) - 1
-    processes = []
+    aux_data = []
     for row in result[1:]:
-        processes.append(row.split(None, nfields))
-        processes = list(filter(None, processes))
-    return processes
+        aux_data.append(row.split(None, nfields))
+        aux_data = list(filter(None, aux_data))
+    return aux_data
 
 
 # Осуществляем поиск уникальных пользователей системы
-def get_unique_system_users():
-    process = subprocess.run("ps aux", shell=True, stdout=subprocess.PIPE, encoding="utf-8")
-    users_list = process.stdout.split("\n")
-    regexp = r"^[_a-z]{1,10}"
-    result = []
-    for elem in users_list:
-        matching = re.findall(regexp, elem)
-        element_string = ''.join(matching)
-        result.append(element_string)
-    system_users_list = list(filter(None, result))
-    unique_system_users = list(set(system_users_list))
-    return unique_system_users
+def get_unique_system_users(aux_data: list):
+    unique_users = []
+    for element in aux_data:
+        unique_users.append(element[0])
+    return list(set(unique_users))
 
 
 # Осуществляем поиск количества всех выполняемых процессов в системе
-def get_process_quantity():
-    process = subprocess.run("ps aux", shell=True, stdout=subprocess.PIPE, encoding="utf-8")
-    process_list = process.stdout.split("\n")
-    quantity = len(process_list) - 1
+def get_process_quantity(aux_data: list):
+    quantity = len(aux_data) - 1
     return quantity
 
 
 # Агрегируем данные всех процессов по именам пользователей в единый словарь
-def get_all_processes_per_users():
+def get_all_processes_per_users(aux_data: list):
     users_processes = {}
-    for user in get_unique_system_users():
-        filtered = filter(lambda c: user in c, get_ps_aux_data())
+    for user in get_unique_system_users(aux_data):
+        filtered = filter(lambda c: user in c, aux_data)
         user_process = {user: len(list(filtered))}
         users_processes.update(user_process)
     return users_processes
 
 
 # Находим количество используемой всеми процессами памяти
-def get_all_memory_usage():
+def get_all_memory_usage(aux_data: list):
     mem_usage_list = []
     mem_usage = 0
-    for process in get_ps_aux_data():
+    for process in aux_data:
         mem_usage_list.append(process[3])
     for elem in mem_usage_list:
         mem_usage += float(elem)
@@ -60,10 +50,10 @@ def get_all_memory_usage():
 
 
 # Находим процент использования памяти процессора
-def get_cpu_usage():
+def get_cpu_usage(aux_data: list):
     cpu_usage_list = []
     cpu_usage = 0
-    for process in get_ps_aux_data():
+    for process in aux_data:
         cpu_usage_list.append(process[2])
     for elem in cpu_usage_list:
         cpu_usage += float(elem)
@@ -71,20 +61,20 @@ def get_cpu_usage():
 
 
 # Находим процесс, использующий больше всего RAM (памяти)
-def get_hardest_ram_process():
+def get_hardest_ram_process(aux_data: list):
     ram_usage_list = []
-    for process in get_ps_aux_data():
+    for process in aux_data:
         ram_usage_list.append(process[3])
-    for hard_ram_process in get_ps_aux_data():
+    for hard_ram_process in aux_data:
         if ram_usage_list[0] in hard_ram_process:
-            return hard_ram_process[-1][:20] + "..."
+            return hard_ram_process[-1][:30] + "..."
 
 
 # Находим процесс, использующий больше всего CPU (процессора)
-def get_hardest_cpu_process():
-    hard_process = get_ps_aux_data()[1]
+def get_hardest_cpu_process(aux_data: list):
+    hard_process = aux_data[1]
     hard_process_name = hard_process[-1]
-    return hard_process_name[:20] + "..."
+    return hard_process_name[:30] + "..."
 
 
 # Построчный вывод значений словаря
@@ -116,6 +106,6 @@ def save_report_to_txt(sys_users: list, process_quantity: int, process_per_user:
         file.write("\n" + "Всего памяти используется: " + str(mem_usage) + " %" + "\n" + "\n")
         file.write("Всего CPU используется: " + str(cpu_usage) + " %" + "\n" + "\n")
         file.write(
-            "Больше всего памяти использует процесс: " + hard_ram_process + "\n")
+            "Больше всего памяти использует процесс: " + hard_ram_process + "\n" + "\n")
         file.write(
             "Больше всего CPU использует процесс: " + hard_cpu_process + "\n")
