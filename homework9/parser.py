@@ -24,7 +24,7 @@ def get_unique_system_users(aux_data: list):
 
 # Осуществляем поиск количества всех выполняемых процессов в системе
 def get_process_quantity(aux_data: list):
-    quantity = len(aux_data) - 1
+    quantity = len(aux_data)
     return quantity
 
 
@@ -67,14 +67,20 @@ def get_hardest_ram_process(aux_data: list):
         ram_usage_list.append(process[3])
     for hard_ram_process in aux_data:
         if ram_usage_list[0] in hard_ram_process:
-            return hard_ram_process[-1][:30] + "..."
+            return hard_ram_process[-1][:20]
 
 
 # Находим процесс, использующий больше всего CPU (процессора)
 def get_hardest_cpu_process(aux_data: list):
-    hard_process = aux_data[1]
-    hard_process_name = hard_process[-1]
-    return hard_process_name[:30] + "..."
+    # hard_process = aux_data[1]
+    # hard_process_name = hard_process[-1]
+    # return hard_process_name[:20]
+    cpu_usage_list = []
+    for process in aux_data:
+        cpu_usage_list.append(process[2])
+    for hard_cpu_process in aux_data:
+        if cpu_usage_list[0] in hard_cpu_process:
+            return hard_cpu_process[-1][:20]
 
 
 # Построчный вывод значений словаря
