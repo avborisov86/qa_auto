@@ -72,14 +72,12 @@ def get_hardest_ram_process(aux_data: list):
 
 # Находим процесс, использующий больше всего CPU (процессора)
 def get_hardest_cpu_process(aux_data: list):
-    # hard_process = aux_data[1]
-    # hard_process_name = hard_process[-1]
-    # return hard_process_name[:20]
     cpu_usage_list = []
     for process in aux_data:
         cpu_usage_list.append(process[2])
+    max_element = max(cpu_usage_list, key=lambda i: float(i))
     for hard_cpu_process in aux_data:
-        if cpu_usage_list[0] in hard_cpu_process:
+        if max_element in hard_cpu_process[2]:
             return hard_cpu_process[-1][:20]
 
 
