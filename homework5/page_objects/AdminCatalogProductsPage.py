@@ -1,6 +1,6 @@
 import allure
 from selenium.webdriver.common.by import By
-from homework5.page_objects.BasePage import BasePage
+from homework5.page_objects import BasePage
 from random import randint
 
 
@@ -45,7 +45,7 @@ class AdminCatalogProductsPage(BasePage):
 
     @allure.step("Find and mark random product in products list")
     def mark_random_product(self):
-        random_product = randint(0, self.get_quantity(self.PRODUCT_ROW))
+        random_product = randint(1, self.get_quantity(self.PRODUCT_ROW))
         self.move_and_click(
             (By.CSS_SELECTOR, f'tbody > tr:nth-child({random_product}) > td:nth-child(1) > input[type=checkbox]'))
 
