@@ -1,2 +1,0 @@
-class AlertOpencart:
-    pass

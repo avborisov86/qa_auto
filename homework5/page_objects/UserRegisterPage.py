@@ -1,6 +1,6 @@
 import allure
 from selenium.webdriver.common.by import By
-from homework5.page_objects.BasePage import BasePage
+from homework5.page_objects import BasePage
 from homework5.page_objects.TestData import UserRegisterPageTestData
 import random
 import string

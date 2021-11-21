@@ -4,11 +4,11 @@ import os
 from selenium import webdriver
 from selenium.webdriver.opera.options import Options as OperaOptions
 
-DRIVERS = os.path.expanduser("/Users/avboris/Develop/drivers")
+DRIVERS = os.path.dirname(__file__)
 
 logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s',
                     level=logging.INFO,
-                    filename='../../logs/tests.log')
+                    filename='tests.log')
 
 
 def pytest_addoption(parser):
@@ -16,14 +16,14 @@ def pytest_addoption(parser):
     parser.addoption("--headless", action="store_true", help="Run tests headless")
     parser.addoption("--executor", action="store", default="127.0.0.1:8081",
                      choices=["127.0.0.1:8081", "0.0.0.0:4444"])
-    parser.addoption("--bversion", action="store", default="92.0",
-                     choices=["92.0", "91.0", "77.0", "76.0", "91.0", "90.0"])
+    parser.addoption("--browser", action="store", default="chrome",
+                     choices=["chrome", "firefox", "opera"])
+    parser.addoption("--bversion", action="store", default="94.0",
+                     choices=["94.0", "95.0", "92.0", "93.0", "79.0", "80.0"])
     parser.addoption("--vnc", action="store_true", default=False)
     parser.addoption("--logs", action="store_true", default=False)
     parser.addoption("--videos", action="store_true", default=False)
     parser.addoption("--mobile", action="store_true")
-    parser.addoption("--browser", action="store", default="chrome",
-                     choices=["chrome", "opera", "firefox"])
     parser.addoption("--base_url", action="store", default="https://demo.opencart.com")
     parser.addoption("--cat_url", action="store",
                      default="https://demo.opencart.com/index.php?route=product/category&path=18")
@@ -101,7 +101,7 @@ def browser(request):
     if _browser == "chrome":
         options = webdriver.ChromeOptions()
         options.binary_location = "/Applications/Google Chrome 0.app/Contents/MacOS/Google Chrome"
-        chrome_driver_binary = "/Users/avboris/Develop/drivers/chromedriver"
+        chrome_driver_binary = f"{DRIVERS}/drivers/chromedriver"
         if headless:
             options.headless = True
 
