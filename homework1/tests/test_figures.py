@@ -3,11 +3,11 @@ School: OTUS "QA Automation"
 First task: покрытие автотестами кода из файлов circle.py, rectangle.py, square.py, triangle.py
 Author: Anton Borisov
 """
-from src.figure import Figure
-from src.square import Square
-from src.triangle import Triangle
-from src.rectangle import Rectangle
-from src.circle import Circle
+from homework1.src.figure import Figure
+from homework1.src.square import Square
+from homework1.src import Triangle
+from homework1.src.rectangle import Rectangle
+from homework1.src.circle import Circle
 
 import pytest
 import random

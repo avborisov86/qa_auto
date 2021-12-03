@@ -1,0 +1,294 @@
+{
+  "uid" : "43c6fccd41cb9bcc",
+  "name" : "Проверка: проваленная регистрация с незаполненными обязательными полями",
+  "fullName" : "project_work.tests.test_user_register_page#test1_new_user_registration_with_blank_required_fields",
+  "historyId" : "4dc00bcd7730a4e46d001c41b4a9cc68",
+  "time" : {
+    "start" : 1637508153287,
+    "stop" : 1637508155282,
+    "duration" : 1995
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1637508151787,
+      "stop" : 1637508153285,
+      "duration" : 1498
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1637508151716,
+      "stop" : 1637508151787,
+      "duration" : 71
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "local_base_url",
+    "time" : {
+      "start" : 1637508153286,
+      "stop" : 1637508153286,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Going to page",
+      "time" : {
+        "start" : 1637508153288,
+        "stop" : 1637508153666,
+        "duration" : 378
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicking the element (without mouse moving)",
+      "time" : {
+        "start" : 1637508153666,
+        "stop" : 1637508153719,
+        "duration" : 53
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Looking for the unique element ('css selector', '#top-links > ul > li:nth-child(2)') on the page",
+        "time" : {
+          "start" : 1637508153666,
+          "stop" : 1637508153684,
+          "duration" : 18
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', '#top-links > ul > li:nth-child(2)')"
+        }, {
+          "name" : "time",
+          "value" : "10"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "locator",
+        "value" : "('css selector', '#top-links > ul > li:nth-child(2)')"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Moving the mouse to the element and clicking it",
+      "time" : {
+        "start" : 1637508153719,
+        "stop" : 1637508155136,
+        "duration" : 1417
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Looking for the unique element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li') on the page",
+        "time" : {
+          "start" : 1637508153720,
+          "stop" : 1637508153734,
+          "duration" : 14
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', '#top-links > ul > li:nth-child(2) > ul > li')"
+        }, {
+          "name" : "time",
+          "value" : "10"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "locator",
+        "value" : "('css selector', '#top-links > ul > li:nth-child(2) > ul > li')"
+      }, {
+        "name" : "time",
+        "value" : "0.5"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Pushing continue button",
+      "time" : {
+        "start" : 1637508155136,
+        "stop" : 1637508155278,
+        "duration" : 142
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Clicking the element (without mouse moving)",
+        "time" : {
+          "start" : 1637508155136,
+          "stop" : 1637508155278,
+          "duration" : 142
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', 'input[value=Continue') on the page",
+          "time" : {
+            "start" : 1637508155137,
+            "stop" : 1637508155153,
+            "duration" : 16
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', 'input[value=Continue')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', 'input[value=Continue')"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Getting the page title",
+      "time" : {
+        "start" : 1637508155278,
+        "stop" : 1637508155282,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "2923155eccd4c030",
+      "name" : "log",
+      "source" : "2923155eccd4c030.txt",
+      "type" : "text/plain",
+      "size" : 1213
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 9,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "browser::final",
+    "time" : {
+      "start" : 1637508155283,
+      "stop" : 1637508155349,
+      "duration" : 66
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "project_work.tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_user_register_page"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Anton.local"
+  }, {
+    "name" : "thread",
+    "value" : "3130-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "project_work.tests.test_user_register_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "43c6fccd41cb9bcc.json",
+  "parameterValues" : [ ]
+}

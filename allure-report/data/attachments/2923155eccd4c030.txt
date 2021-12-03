@@ -1,0 +1,10 @@
+[32mINFO    [0m BrowserLoger:conftest.py:98  ----> Test test1_new_user_registration_with_blank_required_fields started
+[32mINFO    [0m UserRegisterPage:BasePage.py:49 Moving to url http://127.0.0.1:8081/
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#top-links > ul > li:nth-child(2)')
+[32mINFO    [0m UserRegisterPage:BasePage.py:67 Clicking element (without mouse moving) ('css selector', '#top-links > ul > li:nth-child(2)')
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li')
+[32mINFO    [0m UserRegisterPage:BasePage.py:72 Moving the mouse to the element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li') and clicking
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', 'input[value=Continue')
+[32mINFO    [0m UserRegisterPage:BasePage.py:67 Clicking element (without mouse moving) ('css selector', 'input[value=Continue')
+[32mINFO    [0m UserRegisterPage:BasePage.py:76 Getting page http://127.0.0.1:8081/ title
+[32mINFO    [0m BrowserLoger:conftest.py:192  ----> Test test1_new_user_registration_with_blank_required_fields finished

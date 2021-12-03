@@ -1,0 +1,34 @@
+[32mINFO    [0m BrowserLoger:conftest.py:98  ----> Test test5_warn_info_when_first_name_empty started
+[32mINFO    [0m UserRegisterPage:BasePage.py:49 Moving to url http://127.0.0.1:8081/
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#top-links > ul > li:nth-child(2)')
+[32mINFO    [0m UserRegisterPage:BasePage.py:67 Clicking element (without mouse moving) ('css selector', '#top-links > ul > li:nth-child(2)')
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li')
+[32mINFO    [0m UserRegisterPage:BasePage.py:72 Moving the mouse to the element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li') and clicking
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-firstname')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:56 Filling in input: First Name with data Bonnie
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-lastname')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:62 Filling in input: Last Name with data Wallis
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-email')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:68 Filling in input: E-Mail with data automation435_v@gmail.com
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-telephone')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:73 Filling in input: Telephone with data 89278956767
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-password')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:78 Filling in input: Password with data qwerty987
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-confirm')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:83 Filling in input: Password Confirm with data qwerty987
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#input-firstname')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:100 Filling the form without element First Name
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', 'input[name=agree')
+[32mINFO    [0m UserRegisterPage:BasePage.py:67 Clicking element (without mouse moving) ('css selector', 'input[name=agree')
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', 'input[value=Continue')
+[32mINFO    [0m UserRegisterPage:BasePage.py:67 Clicking element (without mouse moving) ('css selector', 'input[value=Continue')
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#account > div:nth-child(3) > label')
+[32mINFO    [0m UserRegisterPage:BasePage.py:98 Checking css property 'color'
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#account > div:nth-child(3) > div > div')
+[32mINFO    [0m UserRegisterPage:BasePage.py:98 Checking css property 'color'
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#account > div:nth-child(3) > div > div')
+[32mINFO    [0m UserRegisterPage:BasePage.py:55 Getting property 'innerHTML' of element ('css selector', '#account > div:nth-child(3) > div > div')
+[32mINFO    [0m UserRegisterPage:BasePage.py:19 Finding element ('css selector', '#account > div:nth-child(3)')
+[32mINFO    [0m UserRegisterPage:BasePage.py:55 Getting property 'className' of element ('css selector', '#account > div:nth-child(3)')
+[32mINFO    [0m UserRegisterPage:UserRegisterPage.py:133 Checking 'has-error' class exists with element ('css selector', '#account > div:nth-child(3)')
+[32mINFO    [0m BrowserLoger:conftest.py:192  ----> Test test5_warn_info_when_first_name_empty finished

@@ -1,0 +1,564 @@
+{
+  "uid" : "9c10abb42f3dabc9",
+  "name" : "Проверка: проваленная регистрация нового пользователя без Политики конфиденциальности",
+  "fullName" : "project_work.tests.test_user_register_page#test2_new_user_registration_without_privacy_policy",
+  "historyId" : "c084c4afa8f2807c0950e28257053b69",
+  "time" : {
+    "start" : 1637508156829,
+    "stop" : 1637508159080,
+    "duration" : 2251
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1637508155351,
+      "stop" : 1637508156828,
+      "duration" : 1477
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "local_base_url",
+    "time" : {
+      "start" : 1637508156828,
+      "stop" : 1637508156828,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_session_faker",
+    "time" : {
+      "start" : 1637508151716,
+      "stop" : 1637508151787,
+      "duration" : 71
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Going to page",
+      "time" : {
+        "start" : 1637508156829,
+        "stop" : 1637508157198,
+        "duration" : 369
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicking the element (without mouse moving)",
+      "time" : {
+        "start" : 1637508157198,
+        "stop" : 1637508157246,
+        "duration" : 48
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Looking for the unique element ('css selector', '#top-links > ul > li:nth-child(2)') on the page",
+        "time" : {
+          "start" : 1637508157198,
+          "stop" : 1637508157216,
+          "duration" : 18
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', '#top-links > ul > li:nth-child(2)')"
+        }, {
+          "name" : "time",
+          "value" : "10"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "locator",
+        "value" : "('css selector', '#top-links > ul > li:nth-child(2)')"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Moving the mouse to the element and clicking it",
+      "time" : {
+        "start" : 1637508157246,
+        "stop" : 1637508158645,
+        "duration" : 1399
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Looking for the unique element ('css selector', '#top-links > ul > li:nth-child(2) > ul > li') on the page",
+        "time" : {
+          "start" : 1637508157246,
+          "stop" : 1637508157260,
+          "duration" : 14
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', '#top-links > ul > li:nth-child(2) > ul > li')"
+        }, {
+          "name" : "time",
+          "value" : "10"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "locator",
+        "value" : "('css selector', '#top-links > ul > li:nth-child(2) > ul > li')"
+      }, {
+        "name" : "time",
+        "value" : "0.5"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Entering all data into inputs of the new user registration form",
+      "time" : {
+        "start" : 1637508158645,
+        "stop" : 1637508158930,
+        "duration" : 285
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158646,
+          "stop" : 1637508158711,
+          "duration" : 65
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-firstname') on the page",
+          "time" : {
+            "start" : 1637508158647,
+            "stop" : 1637508158663,
+            "duration" : 16
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-firstname')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'First Name'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158712,
+          "stop" : 1637508158753,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-lastname') on the page",
+          "time" : {
+            "start" : 1637508158714,
+            "stop" : 1637508158725,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-lastname')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'Last Name'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158753,
+          "stop" : 1637508158799,
+          "duration" : 46
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-email') on the page",
+          "time" : {
+            "start" : 1637508158753,
+            "stop" : 1637508158764,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-email')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'E-Mail'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158800,
+          "stop" : 1637508158841,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-telephone') on the page",
+          "time" : {
+            "start" : 1637508158800,
+            "stop" : 1637508158813,
+            "duration" : 13
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-telephone')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'Telephone'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158841,
+          "stop" : 1637508158882,
+          "duration" : 41
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-password') on the page",
+          "time" : {
+            "start" : 1637508158841,
+            "stop" : 1637508158852,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-password')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'Password'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Entering data into chosen input",
+        "time" : {
+          "start" : 1637508158882,
+          "stop" : 1637508158930,
+          "duration" : 48
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', '#input-confirm') on the page",
+          "time" : {
+            "start" : 1637508158883,
+            "stop" : 1637508158896,
+            "duration" : 13
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', '#input-confirm')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "value",
+          "value" : "'Password Confirm'"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 12,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Pushing continue button",
+      "time" : {
+        "start" : 1637508158930,
+        "stop" : 1637508159064,
+        "duration" : 134
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Clicking the element (without mouse moving)",
+        "time" : {
+          "start" : 1637508158930,
+          "stop" : 1637508159064,
+          "duration" : 134
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Looking for the unique element ('css selector', 'input[value=Continue') on the page",
+          "time" : {
+            "start" : 1637508158930,
+            "stop" : 1637508158943,
+            "duration" : 13
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "locator",
+            "value" : "('css selector', 'input[value=Continue')"
+          }, {
+            "name" : "time",
+            "value" : "10"
+          } ],
+          "hasContent" : true,
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "locator",
+          "value" : "('css selector', 'input[value=Continue')"
+        } ],
+        "hasContent" : true,
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verifying if the element ('css selector', \"div[class='alert alert-danger alert-dismissible']\") is on the page",
+      "time" : {
+        "start" : 1637508159064,
+        "stop" : 1637508159078,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "locator",
+        "value" : "('css selector', \"div[class='alert alert-danger alert-dismissible']\")"
+      }, {
+        "name" : "time",
+        "value" : "10"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Getting the page title",
+      "time" : {
+        "start" : 1637508159078,
+        "stop" : 1637508159080,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "aa8fbf0155ea3600",
+      "name" : "log",
+      "source" : "aa8fbf0155ea3600.txt",
+      "type" : "text/plain",
+      "size" : 2615
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 23,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "browser::final",
+    "time" : {
+      "start" : 1637508159081,
+      "stop" : 1637508159145,
+      "duration" : 64
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "project_work.tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_user_register_page"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Anton.local"
+  }, {
+    "name" : "thread",
+    "value" : "3130-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "project_work.tests.test_user_register_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9c10abb42f3dabc9.json",
+  "parameterValues" : [ ]
+}
