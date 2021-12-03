@@ -4,7 +4,7 @@ Task 1: describe class 'triangle' and its attributes / работа с фигу�
 Author: Anton Borisov
 """
 
-from src.figure import Figure
+from homework1.src.figure import Figure
 
 
 class Triangle(Figure):

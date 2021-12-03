@@ -3,6 +3,7 @@ import pytest
 import os
 from selenium import webdriver
 from selenium.webdriver.opera.options import Options as OperaOptions
+from selenium.webdriver.chrome.service import Service
 
 DRIVERS = os.path.dirname(__file__)
 
@@ -15,7 +16,8 @@ def pytest_addoption(parser):
     parser.addoption("--maximized", action="store_true", help="Maximize browser windows")
     parser.addoption("--headless", action="store_true", help="Run tests headless")
     parser.addoption("--executor", action="store", default="127.0.0.1:8081",
-                     choices=["127.0.0.1:8081", "0.0.0.0:4444"])
+                     choices=["127.0.0.1:8081", "192.168.1.45:8081", "0.0.0.0:4444"],
+                     help="Choose from 127.0.0.1:8081, 192.168.1.45:8081, 0.0.0.0:4444")
     parser.addoption("--browser", action="store", default="chrome",
                      choices=["chrome", "firefox", "opera"])
     parser.addoption("--bversion", action="store", default="94.0",
@@ -97,6 +99,7 @@ def browser(request):
 
     driver = None
     executor_url = f"http://{executor}/wd/hub"
+    ser = Service("/Users/avboris/Develop/drivers/chromedriver")
 
     if _browser == "chrome":
         options = webdriver.ChromeOptions()
@@ -106,7 +109,7 @@ def browser(request):
             options.headless = True
 
         if executor == "127.0.0.1:8081":
-            driver = webdriver.Chrome(executable_path=chrome_driver_binary, options=options)
+            driver = webdriver.Chrome(service=ser, options=options)
 
         elif executor == "0.0.0.0:4444":
             capabilities = {

@@ -4,7 +4,7 @@ Task 1: describe class 'circle' and its attributes / работа с фигур�
 Author: Anton Borisov
 """
 
-from src.figure import Figure
+from homework1.src.figure import Figure
 import math
 
 
