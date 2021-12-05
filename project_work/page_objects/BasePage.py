@@ -22,13 +22,13 @@ class BasePage:
                                                            message=f"Can't find element by locator {locator}")
         except TimeoutException:
             raise AssertionError(f"Can't find element by locator {locator}")
-        except common.exceptions.NoSuchElementException:
-            allure.attach(
-                name=self.browser.session_id,
-                body=self.browser.get_screenshot_as_png(),
-                attachment_type=allure.attachment_type.PNG
-            )
-            raise AssertionError(f"Element {locator} not found on the page!")
+        # except common.exceptions.NoSuchElementException:
+        #     allure.attach(
+        #         name=self.browser.session_id,
+        #         body=self.browser.get_screenshot_as_png(),
+        #         attachment_type=allure.attachment_type.PNG
+        #     )
+        #     raise AssertionError(f"Element {locator} not found on the page!")
 
     @allure.step("Looking for same elements on the page")
     def find_elements(self, locator: tuple, time=10):
@@ -36,7 +36,7 @@ class BasePage:
         return WebDriverWait(self.browser, time).until(EC.visibility_of_all_elements_located(locator),
                                                        message=f"Can't find elements by locator {locator}")
 
-    @allure.step("Verifying if the element {locator} is on the page")
+    @allure.step("Verifying if the element {locator} is on the page and visible")
     def verify_element_presence(self, locator: tuple, time=10):
         self.logger.info("Verifying element {} presence".format(locator))
         try:
@@ -57,7 +57,7 @@ class BasePage:
 
     @allure.step("Getting quantity of elements")
     def get_quantity(self, locator: tuple):
-        quantity = len(self.find_elements(locator, 2))
+        quantity = len(self.find_elements(locator))
         self.logger.info("Getting quantity of elements {}".format(locator))
         return quantity
 
@@ -93,7 +93,7 @@ class BasePage:
         return entered_value
 
     @allure.step("Checking css property")
-    def check_css_property(self, locator: tuple, value: str):
+    def get_css_property(self, locator: tuple, value: str):
         css_property = self.find_element(locator).value_of_css_property(value)
-        self.logger.info("Checking css property '{}'".format(value))
+        self.logger.info("Getting css property '{}'".format(value))
         return css_property
