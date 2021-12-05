@@ -117,10 +117,10 @@ def test5_warn_info_when_first_name_empty(browser, local_base_url):
     user_register_page.agree_with_policy()
     user_register_page.push_continue_btn()
     errors = []
-    if not user_register_page.check_css_property(UserRegisterPage.FIRST_NAME_LABEL,
+    if not user_register_page.get_css_property(UserRegisterPage.FIRST_NAME_LABEL,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Label color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
-    if not user_register_page.check_css_property(UserRegisterPage.FIRST_NAME_TEXT_DANGER,
+    if not user_register_page.get_css_property(UserRegisterPage.FIRST_NAME_TEXT_DANGER,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Text danger color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
     if not user_register_page.get_property(UserRegisterPage.FIRST_NAME_TEXT_DANGER,
@@ -142,10 +142,10 @@ def test6_warn_info_when_last_name_empty(browser, local_base_url):
     user_register_page.agree_with_policy()
     user_register_page.push_continue_btn()
     errors = []
-    if not user_register_page.check_css_property(UserRegisterPage.LAST_NAME_LABEL,
+    if not user_register_page.get_css_property(UserRegisterPage.LAST_NAME_LABEL,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Label color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
-    if not user_register_page.check_css_property(UserRegisterPage.LAST_NAME_TEXT_DANGER,
+    if not user_register_page.get_css_property(UserRegisterPage.LAST_NAME_TEXT_DANGER,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Text danger color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
     if not user_register_page.get_property(UserRegisterPage.LAST_NAME_TEXT_DANGER,
@@ -167,10 +167,10 @@ def test7_warn_info_when_email_empty(browser, local_base_url):
     user_register_page.agree_with_policy()
     user_register_page.push_continue_btn()
     errors = []
-    if not user_register_page.check_css_property(UserRegisterPage.EMAIL_LABEL,
+    if not user_register_page.get_css_property(UserRegisterPage.EMAIL_LABEL,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Label color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
-    if not user_register_page.check_css_property(UserRegisterPage.EMAIL_TEXT_DANGER,
+    if not user_register_page.get_css_property(UserRegisterPage.EMAIL_TEXT_DANGER,
                                                  "color") == TestDataUserRegistration.ERROR_LABEL_TEXT_COLOR:
         errors.append("Text danger color equals to 'rgba(169, 68, 66, 1)'/'#a94442'")
     if not user_register_page.get_property(UserRegisterPage.EMAIL_TEXT_DANGER,

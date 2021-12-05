@@ -1,4 +1,5 @@
 import allure
+import random
 from selenium.webdriver.common.by import By
 from .BasePage import BasePage
 
@@ -13,6 +14,8 @@ class MainPage(BasePage):
     SEARCH_BTN = (By.CSS_SELECTOR, "button[class='btn btn-default btn-lg']")
     # Элемент - кнопка корзины
     CART_BTN = (By.CSS_SELECTOR, "button[class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
+    # Элемент - информационный блок на кнопке 'корзина' о валюте и количестве товаров в корзине
+    CART_TOTAL_INFO = (By.CSS_SELECTOR, "#cart-total")
     # Элемент - заголовок всплывающего уведомления о том, что корзина пуста
     CART_EMPTY_NOTE = (By.CSS_SELECTOR, "#cart > ul > li > p")
     # Элемент - кнопка меню MP3 players
@@ -30,8 +33,10 @@ class MainPage(BasePage):
     CART_PROD_LINK = (By.CSS_SELECTOR, "#cart > ul > li > table > tbody > tr > td:nth-child(2) > a")
     # Элемент - кнопка "удалить товар" во всплывающем меню корзины
     CART_DEL_PROD = (By.CSS_SELECTOR, "#cart > ul > li > table > tbody > tr > td:nth-child(5) > button")
-
-    # cart > ul > li:nth-child(1) > table > tbody > tr > td:nth-child(5) > button
+    # Элемент - любой из продуктов блока 'Featured' на главной странице
+    ANY_FEATURED_PROD_PRICE = (By.CSS_SELECTOR, f"#content > div.row > div:nth-child({random.randint(1, 4)}) > div > div.caption > p.price")
+    # Элемент - 'ADD TO CART' любого из продуктов блока 'Featured' на главной странице
+    ADD_TO_CART_BUTTON_FEATURED_PROD = (By.CSS_SELECTOR, "#content > div.row > div > div > div.button-group > button")
 
     @allure.step("Opening all mp3 products page through main menu")
     def show_all_mp3(self):

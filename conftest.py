@@ -1,3 +1,4 @@
+import allure
 import logging
 import pytest
 import os
@@ -79,6 +80,28 @@ def local_register_url(request):
 @pytest.fixture
 def remote_url(request):
     return request.config.getoption("--remote_url")
+
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    if rep.when == 'call' and rep.failed:
+        mode = 'a' if os.path.exists('failures') else 'w'
+        try:
+            with open('failures', mode) as f:
+                if 'browser' in item.fixturenames:
+                    web_driver = item.funcargs['browser']
+                else:
+                    print('Fail to take screen-shot')
+                    return
+            allure.attach(
+                web_driver.get_screenshot_as_png(),
+                name='screenshot',
+                attachment_type=allure.attachment_type.PNG
+            )
+        except Exception as e:
+            print('Fail to take screen-shot: {}'.format(e))
 
 
 @pytest.fixture
@@ -188,6 +211,11 @@ def browser(request):
         driver.maximize_window()
 
     def final():
+        with open('allure-results/environment.properties', 'w') as f:
+            f.write(f'Browser={_browser}\n')
+            f.write(f'Browser.Version={version}\n')
+            f.write(f'Executor={executor}\n')
+            f.write(f'Headless={headless}')
         driver.quit()
         logger.info(" ----> Test {} finished".format(test_name))
 
