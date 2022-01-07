@@ -7,7 +7,7 @@ from .BasePage import BasePage
 from .TestData import TestDataUserRegistration
 
 
-class UserRegisterPage(BasePage):
+class HeaderRegisterAccount(BasePage):
     # Поле ввода First Name
     FIRST_NAME_INPUT = (By.CSS_SELECTOR, '#input-firstname')
     # Поле ввода Last Name
@@ -51,34 +51,34 @@ class UserRegisterPage(BasePage):
     def fill_in_input(self, value: str):
         if value == 'First Name':
             first_name = names.get_first_name()
-            element = self.find_element(UserRegisterPage.FIRST_NAME_INPUT)
+            element = self.find_element(HeaderRegisterAccount.FIRST_NAME_INPUT)
             element.send_keys(first_name)
             self.logger.info(
                 "Filling in input '{}' with value '{}'".format(value, first_name))
         elif value == "Last Name":
             last_name = names.get_last_name()
-            element = self.find_element(UserRegisterPage.LAST_NAME_INPUT)
+            element = self.find_element(HeaderRegisterAccount.LAST_NAME_INPUT)
             element.send_keys(last_name)
             self.logger.info(
                 "Filling in input '{}' with value '{}'".format(value, last_name))
         elif value == "E-Mail":
             e_mail_generated_part = str(random.randint(1, 1000)) + "_" + random.choice(string.ascii_letters).lower()
-            element = self.find_element(UserRegisterPage.EMAIL_INPUT)
+            element = self.find_element(HeaderRegisterAccount.EMAIL_INPUT)
             element.send_keys(TestDataUserRegistration.EMAIL_PART + e_mail_generated_part + "@gmail.com")
             self.logger.info("Filling in input '{}' with value '{}'".format(value,
-                                                                        TestDataUserRegistration.EMAIL_PART + e_mail_generated_part + "@gmail.com"))
+                                                                            TestDataUserRegistration.EMAIL_PART + e_mail_generated_part + "@gmail.com"))
         elif value == "Telephone":
-            element = self.find_element(UserRegisterPage.TELEPHONE_INPUT)
+            element = self.find_element(HeaderRegisterAccount.TELEPHONE_INPUT)
             element.send_keys(TestDataUserRegistration.PHONE_NUMBER)
             self.logger.info(
                 "Filling in input '{}' with value '{}'".format(value, TestDataUserRegistration.PHONE_NUMBER))
         elif value == "Password":
-            element = self.find_element(UserRegisterPage.PASS_INPUT)
+            element = self.find_element(HeaderRegisterAccount.PASS_INPUT)
             element.send_keys(TestDataUserRegistration.PASS_DATA)
             self.logger.info(
                 "Filling in input '{}' with value '{}'".format(value, TestDataUserRegistration.PASS_DATA))
         elif value == "Password Confirm":
-            element = self.find_element(UserRegisterPage.CONFIRM_PASS_INPUT)
+            element = self.find_element(HeaderRegisterAccount.CONFIRM_PASS_INPUT)
             element.send_keys(TestDataUserRegistration.PASS_CONFIRM_DATA)
             self.logger.info(
                 "Filling in input '{}' with value '{}'".format(value, TestDataUserRegistration.PASS_CONFIRM_DATA))
@@ -96,27 +96,27 @@ class UserRegisterPage(BasePage):
     def fill_in_register_form_without_field(self, value: str):
         if value == "First Name":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.FIRST_NAME_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.FIRST_NAME_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
         elif value == "Last Name":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.LAST_NAME_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.LAST_NAME_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
         elif value == "E-Mail":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.EMAIL_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.EMAIL_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
         elif value == "Telephone":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.TELEPHONE_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.TELEPHONE_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
         elif value == "Password":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.PASS_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.PASS_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
         elif value == "Password Confirm":
             self.fill_in_register_form()
-            self.find_element(UserRegisterPage.CONFIRM_PASS_INPUT).clear()
+            self.find_element(HeaderRegisterAccount.CONFIRM_PASS_INPUT).clear()
             self.logger.info("Filling the form without element '{}'".format(value))
 
     @allure.step("Agreeing with policy agreement")
