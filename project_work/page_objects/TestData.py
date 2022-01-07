@@ -9,14 +9,14 @@ class TestDataHeader:
     CURRENCY_GROUP_CLASS_NAME_VALUE = 'btn-group open'
 
 
-class TestDataMainPage:
-    # Заголовок страницы поиска
-    SEARCH_PAGE_TITLE = "Search - any query"
+class TestDataCart:
     # Заголовок всплывающего уведомления о том, что корзина пуста
     CART_EMPTY_NOTE = "Your shopping cart is empty!"
 
 
-class TestDataSearchPage:
+class TestDataSearch:
+    # Заголовок страницы поиска
+    SEARCH_PAGE_TITLE = "Search - any query"
     # Значение текста в поле input search
     SEARCH_INPUT_VALUE = "any query"
 

@@ -3,7 +3,9 @@ from selenium.webdriver.common.by import By
 from .BasePage import BasePage
 
 
-class Header(BasePage):
+class HeaderCurrency(BasePage):
+    # Форма с элементами для изменения валюты на страницы
+    CURRENCY_FORM = (By.CSS_SELECTOR, '#form-currency')
     # Кнопка открытия выпадающего меню для выбора валют
     CURRENCY_BTN = (By.CSS_SELECTOR, '#form-currency > div > button')
     # Группа элементов с выбором значений разных валют
@@ -16,10 +18,6 @@ class Header(BasePage):
     USD_BTN = (By.CSS_SELECTOR, 'button[name=USD]')
     # Знак отображения разных валют
     CURRENCY_SIGN = (By.CSS_SELECTOR, '#form-currency > div > button > strong')
-    # Кнопка "My Account" в топ меню
-    MY_ACCOUNT_BTN = (By.CSS_SELECTOR, '#top-links > ul > li:nth-child(2)')
-    # Кнопка Register в "My Account"
-    REGISTER_BTN = (By.CSS_SELECTOR, '#top-links > ul > li:nth-child(2) > ul > li')
 
     @allure.step("Changing currency to chosen value")
     def change_currency_to(self, value: str):

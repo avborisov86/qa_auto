@@ -25,8 +25,8 @@ Author: Anton Borisov
 
 import allure
 import time
-from project_work.page_objects.Header import Header
-from project_work.page_objects.UserRegisterPage import UserRegisterPage
+from project_work.page_objects.HeaderCurrency import HeaderCurrency
+from project_work.page_objects.HeaderRegisterAccount import UserRegisterPage
 from project_work.page_objects.TestData import TestDataUserRegistration
 
 
