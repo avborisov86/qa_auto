@@ -12,6 +12,8 @@ class TestDataHeader:
 class TestDataCart:
     # Заголовок всплывающего уведомления о том, что корзина пуста
     CART_EMPTY_NOTE = "Your shopping cart is empty!"
+    # Название и модель добавленного в корзину mp3 плеера
+    CART_ADDED_MP3 = "iPod Nano"
 
 
 class TestDataSearch:

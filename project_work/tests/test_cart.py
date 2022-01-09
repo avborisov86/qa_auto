@@ -8,10 +8,10 @@ Tests:
 3. Проверка: возможность добавления одного товара в корзину + клиенту отображается информационное сообщение о
 добавлении товара
 4. Проверка: возможность добавления нескольких товаров в корзину
-
 5. Проверка: после добавления товара в корзину в информационном сообщении о добавлении товара клиенту отображается
 правильное название добавленного товара
 6. Проверка: есть возможность закрыть информационное сообщение (alert) после добавления товара в корзину
+
 7. Проверка: после добавления товара в корзину во всплывающем меню корзины правильно отображается название
 добавленного товара
 8. Проверка: после добавления товара в корзину из всплывающего меню корзины есть возможность перейти на страницу
@@ -101,8 +101,7 @@ def test3_one_product_add_to_cart(browser, local_base_url):
 @allure.story("Есть возможность добавить несколько товаров в корзину")
 @allure.description(""" 
     На главной странице ИМ http://127.0.0.1:8081/ открываем каталог mp3 плееров, добавляем несколько mp3 плееров и 
-    проверяем добавление разных товаров в корзину (дополнительно проверяем, что пользователю отображаются 
-    информационные сообщения о добавленных в корзину товарах)'
+    проверяем добавление разных товаров в корзину
 """)
 @allure.severity(allure.severity_level.CRITICAL)
 def test4_some_products_add_to_cart(browser, local_base_url):
@@ -113,8 +112,42 @@ def test4_some_products_add_to_cart(browser, local_base_url):
     main_page.simple_click(Cart.SECOND_MP3_PRODUCT)
     main_page.simple_click(Cart.THIRD_MP3_PRODUCT)
     main_page.simple_click(Cart.CART_BTN)
-    time.sleep(10)
     assert main_page.get_quantity(Cart.CART_PROD_ROWS_ADDED) == 3, "Number of added products must be 3"
+
+
+@allure.title("Проверка: после добавления товара в корзину в информационном сообщении о добавлении товара клиенту "
+              "отображается правильное название добавленного товара")
+@allure.feature("Реализация функционала 'корзины' в интернет-магазине")
+@allure.story("Клиенту отображается информационное сообщение о добавлении в корзину конкретного товара")
+@allure.description(""" 
+    На главной странице ИМ http://127.0.0.1:8081/ открываем каталог mp3 плееров, добавляем mp3 плеер и 
+    проверяем, что пользователю отображается информационное сообщение о добавлении в корзину конкретного товара)'
+""")
+@allure.severity(allure.severity_level.CRITICAL)
+def test5_show_alert_after_prod_add_to_cart(browser, local_base_url):
+    main_page = Cart(browser, local_base_url)
+    main_page.go_to_site()
+    main_page.show_all_mp3()
+    main_page.simple_click(Cart.SECOND_MP3_PRODUCT)
+    mp3_added_name = main_page.get_property(Cart.ADD_ALERT, "innerText")
+    assert TestDataCart.CART_ADDED_MP3 in mp3_added_name, "MP3 added to cart name must be 'iPod Nano'"
+
+
+@allure.title("Проверка: есть возможность закрыть информационное сообщение (alert) после добавления товара в корзину")
+@allure.feature("Реализация функционала 'корзины' в интернет-магазине")
+@allure.story("Клиент может закрыть информационное сообщение о добавлении в корзину товара")
+@allure.description(""" 
+    На главной странице ИМ http://127.0.0.1:8081/ открываем каталог mp3 плееров, добавляем mp3 плеер и 
+    проверяем, что пользователь может закрыть информационное сообщение о добавлении в корзину товара)'
+""")
+@allure.severity(allure.severity_level.CRITICAL)
+def test6_close_alert_after_prod_add_to_cart(browser, local_base_url):
+    main_page = Cart(browser, local_base_url)
+    main_page.go_to_site()
+    main_page.show_all_mp3()
+    main_page.simple_click(Cart.SECOND_MP3_PRODUCT)
+    main_page.simple_click(Cart.CLOSE_ALERT_BTN)
+    assert main_page.get_quantity(Cart.ADD_ALERT) == 0
 
 
 @allure.title("Проверка: товар удаляется из корзины через всплывающее меню корзины + проверка, что страница "
