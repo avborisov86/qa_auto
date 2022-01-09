@@ -1,0 +1,12 @@
+INFO     BrowserLoger:conftest.py:121  ----> Test test6_close_alert_after_prod_add_to_cart started
+INFO     Cart:BasePage.py:61 Moving to url http://127.0.0.1:8081/
+INFO     Cart:BasePage.py:19 Finding element ('css selector', "#menu > div[class='collapse navbar-collapse navbar-ex1-collapse'] > ul > li:nth-child(8)")
+INFO     Cart:BasePage.py:79 Clicking element (without mouse moving) ('css selector', "#menu > div[class='collapse navbar-collapse navbar-ex1-collapse'] > ul > li:nth-child(8)")
+INFO     Cart:BasePage.py:19 Finding element ('css selector', "#menu > div[class='collapse navbar-collapse navbar-ex1-collapse'] > ul > li:nth-child(8) > div > a")
+INFO     Cart:BasePage.py:84 Moving the mouse to the element ('css selector', "#menu > div[class='collapse navbar-collapse navbar-ex1-collapse'] > ul > li:nth-child(8) > div > a") and clicking
+INFO     Cart:BasePage.py:19 Finding element ('css selector', "#content > div:nth-child(8) > div:nth-child(2) > div > div:nth-child(2) > div[class='button-group'] > button")
+INFO     Cart:BasePage.py:79 Clicking element (without mouse moving) ('css selector', "#content > div:nth-child(8) > div:nth-child(2) > div > div:nth-child(2) > div[class='button-group'] > button")
+INFO     Cart:BasePage.py:19 Finding element ('css selector', "div[class='alert alert-success alert-dismissible'] > button")
+INFO     Cart:BasePage.py:79 Clicking element (without mouse moving) ('css selector', "div[class='alert alert-success alert-dismissible'] > button")
+INFO     Cart:BasePage.py:49 Verifying if element ('css selector', "div[class='alert alert-success alert-dismissible']") is not displayed
+INFO     BrowserLoger:conftest.py:220  ----> Test test6_close_alert_after_prod_add_to_cart finished

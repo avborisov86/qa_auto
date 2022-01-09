@@ -57,9 +57,12 @@ class BasePage:
 
     @allure.step("Getting quantity of elements")
     def get_quantity(self, locator: tuple):
-        quantity = len(self.find_elements(locator))
-        self.logger.info("Getting quantity of elements {}".format(locator))
-        return quantity
+        try:
+            quantity = len(self.find_elements(locator, 2))
+            self.logger.info("Getting quantity of elements {}".format(locator))
+            return quantity
+        except TimeoutException:
+            return 0
 
     @allure.step("Clicking the element (without mouse moving)")
     def simple_click(self, locator: tuple):

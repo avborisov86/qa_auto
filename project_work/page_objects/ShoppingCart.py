@@ -18,6 +18,8 @@ class Cart(BasePage):
     SHOPPING_CART_EMPTY_NOTE = (By.CSS_SELECTOR, "#content > p")
     # Элемент - информационный alert о добавлении товара в корзину
     ADD_ALERT = (By.CSS_SELECTOR, "div[class='alert alert-success alert-dismissible']")
+    # Элемент - кнопка 'закрыть' информационный alert о добавлении товара в корзину
+    CLOSE_ALERT_BTN = (By.CSS_SELECTOR, "div[class='alert alert-success alert-dismissible'] > button")
     # Элемент - всплывающее меню с добавленным товаром
     CART_PROD_LINK = (By.CSS_SELECTOR, "#cart > ul > li > table > tbody > tr > td:nth-child(2) > a")
     # Элемент - кнопка "удалить товар" во всплывающем меню корзины
